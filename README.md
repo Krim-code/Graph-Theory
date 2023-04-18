@@ -1,4 +1,5 @@
 # Graph-Theory
+![Its the best img, realy](/1.jpg)
 ## DFS (Depth First Search) and BFS (Breadth First Search) are two commonly used graph traversal algorithms used to explore and search through a graph data structure.
 
 ### DFS:
