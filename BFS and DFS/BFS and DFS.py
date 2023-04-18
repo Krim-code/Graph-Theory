@@ -1,3 +1,5 @@
+from pprint import pprint
+
 import pyfiglet
 
 from GraphGenerator.Generator import Graph
@@ -43,8 +45,8 @@ class BFS:
 
 if __name__ == '__main__':
     G = Graph(10)
-    G.randomize(0.5,False)
-    print(G)
+    G.randomize(0.3,False)
+    pprint(G.to_dict_without_weight())
 
     print(pyfiglet.figlet_format("DFS", font = "digital" ))
     DFS = DFS(G.to_dict_without_weight(), 0)

@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from GraphGenerator.Generator import Graph
 
 
@@ -29,8 +31,6 @@ class MaxConnectedComponent:
                 component = Graph(self.graph.vertices)
                 self.dfs(u, component)
                 components.append(component)
-        for i in components:
-            print(i.vertices)
 
         max_component = max(components, key=lambda x: x.vertices)
 
@@ -40,9 +40,10 @@ class MaxConnectedComponent:
 if __name__ == '__main__':
     g = Graph(10)
     g.read_csv("graph.csv")
+    pprint(g.to_dict_without_weight())
     g.draw()
     mcc = MaxConnectedComponent(g)
     max_component = mcc.get_max_connected_component()
-    print(max_component.to_dict_without_weight())
+    pprint(max_component.to_dict_without_weight())
 
     max_component.draw()
