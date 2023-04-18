@@ -42,15 +42,16 @@ class Kruskal:
         return result
 
 
-g = Graph(7)
-g.randomize(0.5, True)
-g.read_csv("graph.csv")
-g.draw()
-print("Importing graph", end="\n")
-pprint(g.to_dict_with_weight())
+if __name__ == '__main__':
+    g = Graph(7)
+    g.randomize(0.5, True)
+    g.read_csv("graph.csv")
+    g.draw()
+    print("Importing graph", end="\n")
+    pprint(g.to_dict_with_weight())
 
-print("Output:", end="\n")
-kruskal = Kruskal(g)
-mst = kruskal.get_minimum_spanning_tree()
-pprint(mst.to_dict_without_weight())
-mst.draw()
+    print("Output:", end="\n")
+    kruskal = Kruskal(g)
+    mst = kruskal.get_minimum_spanning_tree()
+    pprint(mst.to_dict_without_weight())
+    mst.draw()

@@ -20,6 +20,10 @@ class Graph:
         for u, v in edges:
             self.add_edge(u, v)
 
+    def remove_edge(self,u,v):
+        self.edges[u][v] = 0
+        self.edges[v][u] = 0
+
     def randomize(self, density, weight_check):
         max_edges = self.vertices * (self.vertices - 1) // 2
         num_edges = int(density * max_edges)
@@ -81,6 +85,7 @@ class Graph:
         labels = nx.get_edge_attributes(G, 'weight')
         nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
         plt.show()
+
 
 
 if __name__ == '__main__':
