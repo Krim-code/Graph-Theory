@@ -87,7 +87,7 @@ if __name__ == '__main__':
     # Example usage
     g = Graph(10)
     g.read_csv("graph.csv")
-    # g.randomize(0.5, False)
+    g.randomize(0.5, False)
 
     print(g.to_dict_with_weight())
     print(g.to_dict_without_weight())
