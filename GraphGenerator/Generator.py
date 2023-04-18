@@ -2,6 +2,7 @@ import csv
 import random
 import networkx as nx
 import matplotlib.pyplot as plt
+import pyfiglet
 from rich import print
 
 
@@ -87,6 +88,16 @@ class Graph:
         nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
         plt.show()
 
+    def __str__(self):
+        result = ""
+        for i in range(self.vertices):
+            result += f"{i}: "
+            for j in range(self.vertices):
+                if self.edges[i][j] == 1:
+                    result += f"{j} "
+            result += "\n"
+        return result
+
 
 if __name__ == '__main__':
     # Example usage
@@ -94,6 +105,12 @@ if __name__ == '__main__':
     g.read_csv("graph.csv")
     g.randomize(0.5, False)
 
+    print(pyfiglet.figlet_format("Generating Graph Table", font="digital"))
+    print(g)
+
+    print(pyfiglet.figlet_format("Dict With Weight", font="digital"))
     print(g.to_dict_with_weight())
+
+    print(pyfiglet.figlet_format("Dict Without Weight", font="digital"))
     print(g.to_dict_without_weight())
     g.draw()

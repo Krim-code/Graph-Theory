@@ -1,5 +1,7 @@
 from pprint import pprint
 
+import pyfiglet
+
 from GraphGenerator.Generator import Graph
 
 
